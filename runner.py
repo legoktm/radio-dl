@@ -1,12 +1,18 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import os
 import Queue
 import stations
 import sys
 import threading
 import time
 
+
+# Setup
+if not os.path.exists('tmp'):
+    os.mkdir('tmp')
+os.chdir('tmp')
 
 class BaseThread(threading.Thread):
     def run(self):
