@@ -3,9 +3,6 @@
 
 import requests
 import subprocess
-import sh
-
-youtube_dl = sh.Command('youtube-dl')
 
 
 def get_video(artist, song):
@@ -23,7 +20,6 @@ def download(url):
     cmd = 'youtube-dl '
     cmd += url
     cmd += ' --id -x --audio-format mp3 -f worst'
-    #youtube_dl(url + '--id')
     c = subprocess.call(
         cmd,
         stderr=subprocess.STDOUT,
